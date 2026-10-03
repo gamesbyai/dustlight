@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dustlight</title>
+  <meta name="description" content="A small night game drawn with Gaussian splats: carry a lantern through a drained sky archipelago and bring its landmarks back from the dust. A GamesByAI game." />
+  <meta name="theme-color" content="#07080b" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="./fonts/big-shoulders-display-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/geist-400-900-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="vignette"></div>
+
+  <div id="loading" class="screen">
+    <p class="label">Gathering dust <span id="loadpct"></span></p>
+    <div class="bar"><i id="loadbar"></i></div>
+  </div>
+
+  <div id="title" class="screen" hidden>
+    <p class="byline">A <img src="./brand/gamesbyai-logo.svg" alt="GamesByAI" width="90" height="24" /> game</p>
+    <h1>Dustlight</h1>
+    <p class="tagline">Carry the lantern. Bring the islands back from the dust.</p>
+    <button id="begin" class="pill primary" type="button"><span class="mouse">Click to begin</span><span class="touch">Tap to begin</span></button>
+  </div>
+
+  <div id="hud" class="glass" hidden>
+    <span class="label">Embers</span>
+    <span class="pips"><i></i><i></i><i></i><i></i><i></i></span>
+    <span class="count"><b id="found">0</b>/5</span>
+  </div>
+  <button id="pause-button" class="round glass" type="button" aria-label="Pause" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" /></svg></button>
+
+  <div id="subtitle" class="glass chip"><span class="label">The keeper</span><p id="subtitle-text"></p></div>
+  <p id="hint" class="glass chip label"></p>
+
+  <div id="pause" class="screen" hidden>
+    <div class="card glass">
+      <h2>Paused</h2>
+      <ul class="keys">
+        <li><span class="label">Move</span><span class="mouse">WASD or arrows</span><span class="touch">Left thumb</span></li>
+        <li><span class="label">Look</span><span class="mouse">Drag the mouse</span><span class="touch">Drag</span></li>
+        <li><span class="label">Hop</span><span class="mouse">Space</span><span class="touch">↑ button</span></li>
+        <li><span class="label">Glide</span><span>Step off an edge</span></li>
+      </ul>
+      <div class="row">
+        <button id="resume" class="pill primary" type="button">Resume</button>
+        <button id="start-over" class="pill" type="button">Start over</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="end" class="screen" hidden>
+    <div class="card glass">
+      <p class="byline">A <img src="./brand/gamesbyai-logo.svg" alt="GamesByAI" width="90" height="24" /> game</p>
+      <h1>Dustlight</h1>
+      <p class="lead">The lighthouse is lit, and the whale is home.</p>
+      <dl class="stats">
+        <div><dt class="label">Embers</dt><dd><b id="end-found">5</b>/5</dd></div>
+        <div><dt class="label">Time</dt><dd><b id="end-time">0:00</b></dd></div>
+      </dl>
+      <button id="restart" class="pill primary" type="button">Play again</button>
+      <p class="credit">Made with Blender 5.3 Gaussian splats and AI</p>
+      <a class="site" href="https://gamesbyai.win/" target="_blank" rel="noopener">gamesbyai.win ↗</a>
+    </div>
+  </div>
+
+  <div id="stick"><div></div></div>
+  <button id="hop" class="round glass" type="button" aria-label="Hop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6" /></svg></button>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

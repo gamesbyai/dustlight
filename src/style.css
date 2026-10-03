@@ -1,0 +1,118 @@
+/* GamesByAI brand theme (gamesbyai.win docs/standards/design-system.md): dark canvas, glass panels with a
+   lime -> cyan -> magenta hairline, pill buttons, Big Shoulders Display for titles and numbers, Geist for text,
+   monospace for small labels. Fonts are self-hosted (public/fonts, SIL Open Font License). */
+@font-face { font-family: 'Big Shoulders Display'; src: url('/fonts/big-shoulders-display-800-latin.woff2') format('woff2'); font-weight: 600 900; font-display: swap; }
+@font-face { font-family: 'Geist'; src: url('/fonts/geist-400-900-latin.woff2') format('woff2'); font-weight: 400 900; font-display: swap; }
+
+:root {
+  color-scheme: dark;
+  --bg: #07080b;
+  --text: #e8ecf3;
+  --text-2: #aab3c5;
+  --text-3: #8a93a6;
+  --lime: #c6ff3d;
+  --lime-ink: #0b1000;
+  --cyan: #3de0ff;
+  --magenta: #ff3ea5;
+  --glass: rgb(14 17 25 / 0.68);
+  --hair-strong: rgb(255 255 255 / 0.16);
+  --edge-hot: linear-gradient(150deg, var(--lime), rgb(61 224 255 / 0.6) 50%, var(--magenta));
+  --radius: 18px;
+  --radius-lg: 28px;
+  --pill: 999px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ff-display: 'Big Shoulders Display', Impact, 'Arial Narrow', sans-serif;
+  --ff-text: 'Geist', system-ui, sans-serif;
+  --ff-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font: 400 16px/1.5 var(--ff-text); -webkit-font-smoothing: antialiased; }
+canvas#game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; outline: none; }
+#vignette { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(125% 100% at 50% 45%, transparent 58%, rgb(7 8 11 / 0.6) 100%); }
+:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+
+/* Glass: translucent panel, backdrop blur, and a 1 px gradient hairline drawn by a masked pseudo-element
+   (a border-box gradient would show through the translucent fill). */
+.glass { position: relative; background: var(--glass); -webkit-backdrop-filter: blur(16px) saturate(1.2); backdrop-filter: blur(16px) saturate(1.2); border-radius: var(--radius); }
+.glass::before { content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit; background: var(--edge-hot); pointer-events: none;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+@media (prefers-reduced-transparency: reduce) { .glass { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(14 17 25 / 0.92); } }
+
+.label { font: 600 12px/1.2 var(--ff-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+.pill { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 22px; border: 0; border-radius: var(--pill); cursor: pointer;
+  font: 600 16px/1 var(--ff-text); color: var(--text); background: rgb(255 255 255 / 0.06); box-shadow: inset 0 0 0 1px var(--hair-strong);
+  transition: transform 180ms var(--ease), background 180ms var(--ease), box-shadow 180ms var(--ease); }
+.pill:hover { transform: translateY(-1px); background: rgb(255 255 255 / 0.1); }
+.pill:active { transform: scale(0.98); }
+.pill.primary { background: var(--lime); color: var(--lime-ink); box-shadow: 0 0 0 1px rgb(198 255 61 / 0.7), 0 12px 32px -12px rgb(198 255 61 / 0.8); }
+.pill.primary:hover { background: #d8ff75; box-shadow: 0 0 0 1px #d8ff75, 0 16px 44px -12px rgb(198 255 61 / 0.95); }
+.round { display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; color: var(--text); cursor: pointer; }
+.round svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+.touch { display: none; }
+body.is-touch .touch { display: inline; }
+body.is-touch .mouse { display: none; }
+
+/* Full-screen layers: loading, title, pause, end. */
+.screen { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px; pointer-events: none; }
+.screen .pill, .screen a { pointer-events: auto; }
+h1, h2 { margin: 0; font-family: var(--ff-display); font-weight: 800; text-transform: uppercase; line-height: 0.9; letter-spacing: 0.02em; }
+h1 { font-size: clamp(64px, 14vw, 190px);
+  background: linear-gradient(100deg, #f6ffe0, var(--lime) 38%, #e9ffb0 58%, var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 28px rgb(198 255 61 / 0.35)) drop-shadow(0 0 70px rgb(61 224 255 / 0.25)); }
+h2 { font-size: 44px; color: var(--text); }
+.byline { display: flex; align-items: center; gap: 8px; margin: 0 0 18px; font: 600 13px/1 var(--ff-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); }
+.byline img { height: 24px; width: auto; }
+
+#loading { gap: 14px; }
+#loading .label { color: var(--text-2); }
+#loading .bar { width: min(260px, 70vw); height: 3px; border-radius: 2px; background: rgb(255 255 255 / 0.1); overflow: hidden; }
+#loading .bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--lime), var(--cyan), var(--magenta)); }
+
+#title { justify-content: flex-start; padding-top: max(11vh, 32px); }
+#title::before { content: ''; position: absolute; z-index: -1; inset: 0 0 auto; height: 70vh; background: radial-gradient(60% 55% at 50% 30%, rgb(7 8 11 / 0.55), transparent 75%); }
+.tagline { margin: 18px 0 30px; max-width: 44ch; font-size: clamp(16px, 1.6vw, 20px); color: var(--text-2); text-shadow: 0 1px 14px rgb(7 8 11 / 0.9); }
+#begin { min-height: 52px; padding: 14px 30px; font-size: 18px; }
+
+/* HUD: embers found, top centre. Numbers in the display face. */
+#hud { position: fixed; top: max(14px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; padding: 8px 18px; border-radius: var(--pill); pointer-events: none; }
+#hud .pips { display: flex; gap: 8px; }
+#hud i { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid rgb(198 255 61 / 0.45); }
+#hud i.lit { background: var(--lime); border-color: var(--lime); box-shadow: 0 0 10px 2px rgb(198 255 61 / 0.6); }
+#hud .count { font: 800 22px/1 var(--ff-display); color: var(--text-2); }
+#hud .count b { color: var(--lime); font-weight: 800; }
+#pause-button { position: fixed; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); }
+
+/* The keeper's line, and short hints. */
+.chip { position: fixed; left: 50%; transform: translateX(-50%); margin: 0; pointer-events: none; opacity: 0; max-width: min(720px, calc(100% - 32px)); }
+#subtitle { bottom: max(9vh, 72px); display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 24px 16px; border-radius: var(--radius); text-align: center; }
+#subtitle .label { color: var(--lime); }
+#subtitle p { margin: 0; font-size: clamp(16px, 1.9vw, 22px); line-height: 1.4; text-wrap: balance; }
+#hint { bottom: max(3vh, 18px); padding: 9px 16px; border-radius: var(--pill); color: var(--text-2); text-align: center; }
+
+/* Pause and end cards. */
+.card { display: flex; flex-direction: column; align-items: center; padding: 30px clamp(20px, 5vw, 44px) 26px; border-radius: var(--radius-lg); max-width: min(560px, 100%); pointer-events: auto; }
+.card h1 { font-size: clamp(56px, 10vw, 110px); }
+.keys { list-style: none; margin: 18px 0 22px; padding: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 18px; text-align: left; }
+.keys li { display: contents; }
+.keys .label { align-self: center; }
+.row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.lead { margin: 14px 0 0; font-size: 18px; color: var(--text-2); }
+.stats { display: flex; gap: 36px; margin: 20px 0 24px; }
+.stats div { display: flex; flex-direction: column-reverse; align-items: center; gap: 6px; }
+.stats dd { margin: 0; font: 800 26px/1 var(--ff-display); color: var(--text-2); }
+.stats b { font-size: 44px; font-weight: 800; color: var(--lime); }
+.credit { margin: 22px 0 6px; font-size: 14px; color: var(--text-2); }
+.site { font: 600 13px/1 var(--ff-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--lime); text-decoration: none; padding: 8px; }
+.site:hover { text-decoration: underline; }
+
+/* Touch controls: a glass joystick that appears under the left thumb, and a hop button. */
+#stick { position: fixed; width: 112px; height: 112px; margin: -56px 0 0 -56px; border-radius: 50%; background: var(--glass); box-shadow: inset 0 0 0 1px rgb(198 255 61 / 0.35); pointer-events: none; display: none; }
+#stick div { position: absolute; left: 50%; top: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 18px rgb(198 255 61 / 0.6); }
+#hop { display: none; position: fixed; right: max(22px, env(safe-area-inset-right)); bottom: max(26px, env(safe-area-inset-bottom)); width: 76px; height: 76px; color: var(--lime); touch-action: none; }
+#hop svg { width: 32px; height: 32px; }
+body.is-touch.playing #hop { display: grid; }
+
+body.cinematic #hud, body.cinematic #subtitle, body.cinematic #hint, body.cinematic #pause-button { display: none; }
+@media (max-width: 520px) { #hud { gap: 10px; padding: 7px 14px; } #hud .label { display: none; } .stats { gap: 20px; } }

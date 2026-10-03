@@ -1,0 +1,155 @@
+{
+ "name": "sky-whale",
+ "units": "metres",
+ "up": "+Y",
+ "front": "+Z (Blender -Y)",
+ "origin": "centre centre",
+ "splat_count": 150492,
+ "ply": "sky-whale.ply",
+ "ply_bytes": 10233872,
+ "splat_bbox_min": [
+  -3.1811,
+  -3.3715,
+  -7.077
+ ],
+ "splat_bbox_max": [
+  3.1806,
+  3.4543,
+  7.045
+ ],
+ "height": 6.826,
+ "footprint": {
+  "x": 6.362,
+  "z": 14.122
+ },
+ "mesh_area_m2": 145.38,
+ "mesh_vertices": 230934,
+ "mesh_faces": 230705,
+ "build": {
+  "grid": [
+   107,
+   234,
+   113
+  ],
+  "voxels_inside": 322741,
+  "voxel_m": 0.06,
+  "mapping": {
+   "front_u0": -3.2014519056261346,
+   "side_u0": -7.0,
+   "v0": -3.366606170598911
+  }
+ },
+ "renders": {},
+ "timings_s": {
+  "model_build": 0.62,
+  "gn_evaluate": 2.15,
+  "export_ply": 0.15,
+  "collider": 3.45,
+  "render_workbench": 3.07,
+  "save_blend": 0.4,
+  "render_eevee": 1.08,
+  "gpu_lock_wait": 0.0
+ },
+ "views": {
+  "asset": "sky-whale",
+  "sheet": [
+   1672,
+   941
+  ],
+  "split": 509.0,
+  "split_kind": "no empty column: emptiest column, components assigned by centroid",
+  "components": 2,
+  "kept": 2,
+  "front_box": [
+   22,
+   296,
+   593,
+   706
+  ],
+  "side_box": [
+   560,
+   191,
+   1662,
+   721
+  ],
+  "align": "front scaled by 0.8829 to the side view's height over columns 0.00..0.62 (362px)",
+  "height_px": 530,
+  "front_w": 504,
+  "side_w": 1102,
+  "metres_per_px": 0.012704174228675136,
+  "height_m": 6.733212341197822,
+  "front_w_m": 6.402903811252269,
+  "side_w_m": 14.0
+ },
+ "params": {
+  "kind": "hull",
+  "size": [
+   "length",
+   14.0
+  ],
+  "voxel": 0.06,
+  "smooth": 6,
+  "count": 150000,
+  "back": "mirror",
+  "origin": "centre",
+  "align": "side_ref",
+  "seed": 7,
+  "open_vox": 1,
+  "collider": false,
+  "front_fallback_width": 0.4,
+  "side_only_cols": [
+   900,
+   1102
+  ],
+  "mask_cuts": {
+   "front": [
+    [
+     0,
+     388,
+     150,
+     530
+    ],
+    [
+     355,
+     388,
+     504,
+     530
+    ]
+   ]
+  },
+  "parts": [
+   {
+    "kind": "ellipsoid",
+    "label": "fin_l",
+    "p0": [
+     128,
+     300,
+     365
+    ],
+    "p1": [
+     15,
+     615,
+     525
+    ],
+    "w": 50,
+    "t": 14
+   },
+   {
+    "kind": "ellipsoid",
+    "label": "fin_r",
+    "p0": [
+     376,
+     300,
+     365
+    ],
+    "p1": [
+     489,
+     615,
+     525
+    ],
+    "w": 50,
+    "t": 14
+   }
+  ]
+ }
+}

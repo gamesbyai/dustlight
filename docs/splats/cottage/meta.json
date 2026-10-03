@@ -1,0 +1,126 @@
+{
+ "name": "cottage",
+ "units": "metres",
+ "up": "+Y",
+ "front": "+Z (Blender -Y)",
+ "origin": "base centre",
+ "splat_count": 120527,
+ "ply": "cottage.ply",
+ "ply_bytes": 8196252,
+ "splat_bbox_min": [
+  -1.8691,
+  0.0,
+  -1.7413
+ ],
+ "splat_bbox_max": [
+  1.8692,
+  4.476,
+  1.7415
+ ],
+ "height": 4.476,
+ "footprint": {
+  "x": 3.738,
+  "z": 3.483
+ },
+ "mesh_area_m2": 45.68,
+ "mesh_vertices": 427003,
+ "mesh_faces": 427255,
+ "collider": "cottage-collider.glb",
+ "collider_tris": 6000,
+ "collider_bytes": 72776,
+ "build": {
+  "axis_front_px": 355.0,
+  "axis_side_px": 340.0,
+  "profile_rows": [
+   4,
+   845
+  ],
+  "screw_steps": 507,
+  "profile_vertices": 844,
+  "max_radius_m": 1.8701043421275942,
+  "paint_res_m": 0.023219933398355062,
+  "y_scale": 0.9315068493150684,
+  "mapping": {
+   "front_u0": -1.8882978723404256,
+   "side_u0": -1.8085106382978724,
+   "v0": 0.0
+  }
+ },
+ "renders": {},
+ "timings_s": {
+  "model_build": 0.38,
+  "gn_evaluate": 2.52,
+  "export_ply": 0.11,
+  "collider": 7.81,
+  "render_workbench": 1.23,
+  "save_blend": 0.4,
+  "render_eevee": 1.23,
+  "gpu_lock_wait": 0.0
+ },
+ "views": {
+  "asset": "cottage",
+  "sheet": [
+   1672,
+   941
+  ],
+  "split": 883.0,
+  "split_kind": "empty columns 815..951",
+  "components": 2,
+  "kept": 2,
+  "front_box": [
+   104,
+   34,
+   815,
+   880
+  ],
+  "side_box": [
+   952,
+   38,
+   1623,
+   880
+  ],
+  "align": "side scaled by 1.0048 to the front height 846px",
+  "height_px": 846,
+  "front_w": 711,
+  "side_w": 674,
+  "metres_per_px": 0.005319148936170213,
+  "height_m": 4.5,
+  "front_w_m": 3.7819148936170213,
+  "side_w_m": 3.5851063829787235
+ },
+ "params": {
+  "kind": "lathe",
+  "size": [
+   "height",
+   4.5
+  ],
+  "count": 120000,
+  "close_px": 10,
+  "back": "side",
+  "seed": 5,
+  "axis_front": 355.0,
+  "axis_side": 340.0,
+  "parts": [
+   {
+    "kind": "cylinder",
+    "label": "chimney",
+    "x": 170,
+    "y": 503,
+    "z0": 75,
+    "z1": 430,
+    "r0": 52,
+    "ry": 31
+   },
+   {
+    "kind": "cylinder",
+    "label": "flowerpot",
+    "x": 269,
+    "y": 66,
+    "z0": 800,
+    "z1": 846,
+    "r0": 34,
+    "r1": 42
+   }
+  ]
+ }
+}

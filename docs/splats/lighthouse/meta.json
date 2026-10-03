@@ -1,0 +1,106 @@
+{
+ "name": "lighthouse",
+ "units": "metres",
+ "up": "+Y",
+ "front": "+Z (Blender -Y)",
+ "origin": "base centre",
+ "splat_count": 149767,
+ "ply": "lighthouse.ply",
+ "ply_bytes": 10184572,
+ "splat_bbox_min": [
+  -1.8684,
+  0.0101,
+  -1.7069
+ ],
+ "splat_bbox_max": [
+  1.8684,
+  8.2127,
+  1.707
+ ],
+ "height": 8.203,
+ "footprint": {
+  "x": 3.737,
+  "z": 3.414
+ },
+ "mesh_area_m2": 73.91,
+ "mesh_vertices": 355720,
+ "mesh_faces": 356155,
+ "collider": "lighthouse-collider.glb",
+ "collider_tris": 6000,
+ "collider_bytes": 72784,
+ "build": {
+  "axis_front_px": 190.5,
+  "axis_side_px": 177.5,
+  "profile_rows": [
+   78,
+   891
+  ],
+  "screw_steps": 437,
+  "profile_vertices": 816,
+  "max_radius_m": 1.8685259678577582,
+  "paint_res_m": 0.026881478488257542,
+  "y_scale": 0.913572701807996,
+  "mapping": {
+   "front_u0": -1.91993281075028,
+   "side_u0": -1.7889137737961927,
+   "v0": 0.0
+  }
+ },
+ "renders": {},
+ "timings_s": {
+  "model_build": 0.35,
+  "gn_evaluate": 0.17,
+  "export_ply": 0.21,
+  "collider": 2.55,
+  "render_workbench": 1.9,
+  "save_blend": 0.53,
+  "render_eevee": 0.71,
+  "gpu_lock_wait": 0.0
+ },
+ "views": {
+  "asset": "lighthouse",
+  "sheet": [
+   1672,
+   941
+  ],
+  "split": 850.0,
+  "split_kind": "empty columns 739..961",
+  "components": 2,
+  "kept": 2,
+  "front_box": [
+   363,
+   19,
+   739,
+   912
+  ],
+  "side_box": [
+   962,
+   21,
+   1313,
+   914
+  ],
+  "align": "side scaled by 1.0000 to the front height 893px",
+  "height_px": 893,
+  "front_w": 376,
+  "side_w": 351,
+  "metres_per_px": 0.010078387458006719,
+  "height_m": 9.0,
+  "front_w_m": 3.789473684210526,
+  "side_w_m": 3.5375139977603585
+ },
+ "params": {
+  "kind": "lathe",
+  "size": [
+   "height",
+   9.0
+  ],
+  "count": 150000,
+  "close_px": 40,
+  "lathe_rows": [
+   78,
+   10000
+  ],
+  "back": "side",
+  "seed": 2
+ }
+}

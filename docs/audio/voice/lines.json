@@ -1,0 +1,44 @@
+[
+ {
+  "id": "keeper-01",
+  "file": "keeper-01.ogg",
+  "wav": "keeper-01.wav",
+  "text": "Oh... a light. It has been so long.",
+  "duration": 4.76
+ },
+ {
+  "id": "keeper-02",
+  "file": "keeper-02.ogg",
+  "wav": "keeper-02.wav",
+  "text": "The island forgot its shape. Help it remember.",
+  "duration": 3.68
+ },
+ {
+  "id": "keeper-03",
+  "file": "keeper-03.ogg",
+  "wav": "keeper-03.wav",
+  "text": "Every ember is a memory. Bring them home.",
+  "duration": 3.69
+ },
+ {
+  "id": "keeper-04",
+  "file": "keeper-04.ogg",
+  "wav": "keeper-04.wav",
+  "text": "There. Can you hear the bell?",
+  "duration": 2.24
+ },
+ {
+  "id": "keeper-05",
+  "file": "keeper-05.ogg",
+  "wav": "keeper-05.wav",
+  "text": "One more. The lamp is waiting.",
+  "duration": 2.4
+ },
+ {
+  "id": "keeper-06",
+  "file": "keeper-06.ogg",
+  "wav": "keeper-06.wav",
+  "text": "Look up. She came back for us.",
+  "duration": 3.04
+ }
+]

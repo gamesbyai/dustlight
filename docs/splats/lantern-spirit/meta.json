@@ -1,0 +1,162 @@
+{
+ "name": "lantern-spirit",
+ "units": "metres",
+ "up": "+Y",
+ "front": "+Z (Blender -Y)",
+ "origin": "base centre",
+ "splat_count": 59859,
+ "ply": "lantern-spirit.ply",
+ "ply_bytes": 4070827,
+ "splat_bbox_min": [
+  -0.4119,
+  -0.0008,
+  -0.311
+ ],
+ "splat_bbox_max": [
+  0.4118,
+  0.772,
+  0.311
+ ],
+ "height": 0.773,
+ "footprint": {
+  "x": 0.824,
+  "z": 0.622
+ },
+ "mesh_area_m2": 1.42,
+ "mesh_vertices": 279496,
+ "mesh_faces": 279848,
+ "build": {
+  "axis_front_px": 426.5,
+  "axis_side_px": 320.0,
+  "profile_rows": [
+   27,
+   768
+  ],
+  "screw_steps": 371,
+  "profile_vertices": 744,
+  "max_radius_m": 0.33389453665896046,
+  "paint_res_m": 0.005668529208330184,
+  "y_scale": 0.9313868613138686,
+  "mapping": {
+   "front_u0": -0.41458080194410696,
+   "side_u0": -0.3110571081409478,
+   "v0": 0.0
+  }
+ },
+ "renders": {},
+ "timings_s": {
+  "model_build": 0.32,
+  "gn_evaluate": 0.53,
+  "export_ply": 0.02,
+  "collider": 0.94,
+  "render_workbench": 1.11,
+  "save_blend": 0.22,
+  "render_eevee": 1.04,
+  "gpu_lock_wait": 0.0
+ },
+ "views": {
+  "asset": "lantern-spirit",
+  "sheet": [
+   1672,
+   941
+  ],
+  "split": 950.0,
+  "split_kind": "empty columns 904..996",
+  "components": 2,
+  "kept": 2,
+  "front_box": [
+   47,
+   45,
+   904,
+   868
+  ],
+  "side_box": [
+   997,
+   49,
+   1635,
+   868
+  ],
+  "align": "side scaled by 1.0049 to the front height 823px",
+  "height_px": 823,
+  "front_w": 857,
+  "side_w": 641,
+  "metres_per_px": 0.0009720534629404617,
+  "height_m": 0.8,
+  "front_w_m": 0.8330498177399758,
+  "side_w_m": 0.6230862697448359
+ },
+ "params": {
+  "kind": "lathe",
+  "size": [
+   "height",
+   0.8
+  ],
+  "count": 60000,
+  "back": "side",
+  "seed": 3,
+  "collider": false,
+  "tint": [
+   1.18,
+   1.08,
+   0.95
+  ],
+  "sharpness": 6.0,
+  "axis_front": 426.5,
+  "axis_side": 320.0,
+  "close_px": 4,
+  "parts": [
+   {
+    "kind": "ellipsoid",
+    "label": "ear_l",
+    "p0": [
+     170,
+     305,
+     320
+    ],
+    "p1": [
+     8,
+     445,
+     180
+    ],
+    "w": 46,
+    "t": 14
+   },
+   {
+    "kind": "ellipsoid",
+    "label": "ear_r",
+    "p0": [
+     683,
+     305,
+     320
+    ],
+    "p1": [
+     845,
+     445,
+     180
+    ],
+    "w": 46,
+    "t": 14
+   },
+   {
+    "kind": "ellipsoid",
+    "label": "foot_l",
+    "x": 294,
+    "y": 295,
+    "z": 790,
+    "rx": 59,
+    "ry": 70,
+    "rz": 34
+   },
+   {
+    "kind": "ellipsoid",
+    "label": "foot_r",
+    "x": 559,
+    "y": 295,
+    "z": 790,
+    "rx": 59,
+    "ry": 70,
+    "rz": 34
+   }
+  ]
+ }
+}

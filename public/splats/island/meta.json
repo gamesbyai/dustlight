@@ -1,0 +1,112 @@
+{
+ "name": "island",
+ "units": "metres",
+ "up": "+Y",
+ "front": "+Z (Blender -Y)",
+ "origin": "base centre",
+ "splat_count": 469597,
+ "ply": "island.ply",
+ "ply_bytes": 31933012,
+ "splat_bbox_min": [
+  -15.0603,
+  0.5178,
+  -8.4089
+ ],
+ "splat_bbox_max": [
+  15.0605,
+  17.9458,
+  8.33
+ ],
+ "height": 17.428,
+ "footprint": {
+  "x": 30.121,
+  "z": 16.739
+ },
+ "mesh_area_m2": 1292.71,
+ "mesh_vertices": 1029874,
+ "mesh_faces": 1029872,
+ "top_surface_y": 16.779,
+ "note": "Origin at the base centre of the drawing (x/z: centre of the two views, y = 0: the sheet baseline). The lowest splat sits at y = 0.52 m: the mask opening that removes hanging vines also trims the thin tip. top_surface_y is the median height of the grass top (highest splat per cell over the central 40% of the footprint).",
+ "collider": "island-collider.glb",
+ "collider_tris": 6000,
+ "collider_bytes": 72772,
+ "build": {
+  "grid": [
+   300,
+   166,
+   181
+  ],
+  "voxels_inside": 2661199,
+  "voxel_m": 0.1,
+  "extra_objects": [
+   "island_strands"
+  ],
+  "strands": {
+   "strands": 31,
+   "splats": 28744
+  },
+  "mapping": {
+   "front_u0": -15.0,
+   "side_u0": -8.254437869822485,
+   "v0": 0.0
+  }
+ },
+ "renders": {},
+ "timings_s": {
+  "model_build": 2.8,
+  "gn_evaluate": 2.36,
+  "export_ply": 0.78,
+  "collider": 7.9,
+  "render_workbench": 0.73,
+  "save_blend": 0.23,
+  "render_eevee": 1.92,
+  "gpu_lock_wait": 18.0
+ },
+ "views": {
+  "asset": "island",
+  "sheet": [
+   1672,
+   941
+  ],
+  "split": 1067.0,
+  "split_kind": "empty columns 1036..1098",
+  "components": 8,
+  "kept": 2,
+  "front_box": [
+   22,
+   162,
+   1036,
+   772
+  ],
+  "side_box": [
+   1099,
+   168,
+   1650,
+   770
+  ],
+  "align": "side scaled by 1.0133 to the front height 610px",
+  "height_px": 610,
+  "front_w": 1014,
+  "side_w": 558,
+  "metres_per_px": 0.029585798816568046,
+  "height_m": 18.047337278106507,
+  "front_w_m": 30.0,
+  "side_w_m": 16.50887573964497
+ },
+ "params": {
+  "kind": "hull",
+  "size": [
+   "width",
+   30.0
+  ],
+  "voxel": 0.1,
+  "smooth": 10,
+  "open_vox": 4,
+  "run_gap_vox": 2,
+  "strands": true,
+  "count": 300000,
+  "grass": 140000,
+  "back": "mirror",
+  "seed": 1
+ }
+}

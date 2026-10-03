@@ -1,0 +1,122 @@
+{
+ "name": "shrine-arch",
+ "units": "metres",
+ "up": "+Y",
+ "front": "+Z (Blender -Y)",
+ "origin": "base centre",
+ "splat_count": 80284,
+ "ply": "shrine-arch.ply",
+ "ply_bytes": 5459727,
+ "splat_bbox_min": [
+  -2.0584,
+  -0.0173,
+  -0.6799
+ ],
+ "splat_bbox_max": [
+  2.0689,
+  4.0173,
+  0.6683
+ ],
+ "height": 4.035,
+ "footprint": {
+  "x": 4.127,
+  "z": 1.348
+ },
+ "mesh_area_m2": 31.24,
+ "mesh_vertices": 462451,
+ "mesh_faces": 462437,
+ "collider": "shrine-arch-collider.glb",
+ "collider_tris": 6000,
+ "collider_bytes": 72788,
+ "build": {
+  "grid": [
+   205,
+   66,
+   200
+  ],
+  "voxels_inside": 688938,
+  "voxel_m": 0.02,
+  "mapping": {
+   "front_u0": -2.0441501103752757,
+   "side_u0": -0.6534216335540839,
+   "v0": 0.0
+  }
+ },
+ "renders": {},
+ "timings_s": {
+  "model_build": 0.66,
+  "gn_evaluate": 3.12,
+  "export_ply": 0.07,
+  "collider": 9.29,
+  "render_workbench": 0.96,
+  "save_blend": 0.25,
+  "render_eevee": 1.49,
+  "gpu_lock_wait": 0.0
+ },
+ "views": {
+  "asset": "shrine-arch",
+  "sheet": [
+   1672,
+   941
+  ],
+  "split": 1146.0,
+  "split_kind": "empty columns 1082..1210",
+  "components": 5,
+  "kept": 2,
+  "front_box": [
+   156,
+   13,
+   1082,
+   919
+  ],
+  "side_box": [
+   1211,
+   15,
+   1506,
+   919
+  ],
+  "align": "side scaled by 1.0022 to the front height 906px",
+  "height_px": 906,
+  "front_w": 926,
+  "side_w": 296,
+  "metres_per_px": 0.004415011037527594,
+  "height_m": 4.0,
+  "front_w_m": 4.088300220750551,
+  "side_w_m": 1.3068432671081678
+ },
+ "params": {
+  "kind": "hull",
+  "size": [
+   "height",
+   4.0
+  ],
+  "voxel": 0.02,
+  "smooth": 6,
+  "count": 80000,
+  "back": "mirror",
+  "seed": 6,
+  "open_vox": 1,
+  "mask_cuts": {
+   "front": [
+    [
+     400,
+     224,
+     545,
+     470
+    ]
+   ]
+  },
+  "parts": [
+   {
+    "kind": "lathe",
+    "label": "bell",
+    "axis": 471.5,
+    "x0": 400,
+    "x1": 545,
+    "r0": 226,
+    "r1": 466,
+    "y": 127
+   }
+  ]
+ }
+}
